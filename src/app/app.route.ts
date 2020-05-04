@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { LoginSection } from './auth/login/login.component';
-import{PricingSection } from './pricing/pricing.component';
+import { LoginSection } from './login/login.component';
+import{ ProductSection } from './product/product.component';
 
 export const appRoutes: Routes = [
   { path: 'login', component: LoginSection },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {path:'pricing' , component:PricingSection }
+  {path:'product' , component:ProductSection }
 ]
