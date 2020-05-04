@@ -1,11 +1,1 @@
- <form class="login-form" [formGroup]="loginForm" (submit)="loginSubmit (this.loginForm.value)">
-        <mat-form-field class="w-100">
-          <mat-label>Username</mat-label>
-          <input matInput placeholder="Enter Username" formControlName="username" #username>
-        </mat-form-field>
-        <mat-form-field class="w-100">
-          <mat-label>Password</mat-label>
-          <input type="password" matInput placeholder="Enter Password" formControlName="password" #password>
-        </mat-form-field>
-        <button (click)="login(username.value , password.value)" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
-      </form>
+<p> Login </p>

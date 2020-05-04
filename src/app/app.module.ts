@@ -8,6 +8,8 @@ import { appRoutes } from './app.route';
 import { AppComponent } from './app.component';
 import { LoginSection } from './login/login.component';
 import { ProductSection } from './product/product.component';
+import { HeaderComponent } from './global/header/header.component';
+import { FooterComponent } from './global/footer/footer.component';
 
 @NgModule({
   imports: [ 
@@ -15,7 +17,7 @@ import { ProductSection } from './product/product.component';
     RouterModule.forRoot (appRoutes)
   ],
   declarations: [ 
-    AppComponent, ProductSection, LoginSection
+    AppComponent, LoginSection, ProductSection, HeaderComponent, FooterComponent
   ],
   bootstrap:    [ AppComponent ]
 })
