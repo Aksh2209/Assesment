@@ -23,19 +23,20 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule ({
     imports: [
         MatInputModule, MatFormFieldModule, MatCardModule, MatDatepickerModule, MatSlideToggleModule,
         MatCheckboxModule, MatExpansionModule, MatSidenavModule,
         MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatChipsModule, MatRippleModule,
-        MatDialogModule, MatTooltipModule, MatTabsModule
+        MatDialogModule, MatTooltipModule, MatTabsModule, MatGridListModule
     ],
     exports: [
         MatInputModule, MatFormFieldModule, MatCardModule, MatDatepickerModule, MatSlideToggleModule,
         MatCheckboxModule, MatExpansionModule, MatSidenavModule,
         MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatChipsModule, MatRippleModule,
-        MatDialogModule, MatTooltipModule, MatTabsModule
+        MatDialogModule, MatTooltipModule, MatTabsModule, MatGridListModule
     ]
 })
 export class AngularMaterial { }

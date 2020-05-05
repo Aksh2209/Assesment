@@ -58,8 +58,11 @@ footer p {
 }
 /*Product CSS*/
 .tabs-wrapper {
-  display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+
+}
+.List {
+  display: grid;
+  
   padding: 20px;
   border-radius: 5px;
 }

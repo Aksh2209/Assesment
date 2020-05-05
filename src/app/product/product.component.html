@@ -4,21 +4,30 @@
 <mat-tab-group class= "tabs-wrapper">
   <mat-tab label="Plans">
     <div class="product-form">
-      <form>
-        <div *ngFor="let val of productInfo.usagePlan">
-          
-          <select name="select-choice" id="select-choice">
-            <option *ngFor="let opt of val.usagePlan" value="{{ opt.planId }}">{{ opt.value }}</option>
-          </select>
-
-        </div>
-      </form>
+      <div *ngFor="let val of productInfo.result">
+        <legend>{{ val.usagePlan }}</legend>
+        <option *ngFor="let opt of val.usagePlan" value="{{ opt.planId }}">{{ opt.value }}</option>
+      </div>
+      
     </div>
   </mat-tab>
   <mat-tab label="Documentation"> Content 2 </mat-tab>
   <mat-tab label="Sample Data"> Content 3 </mat-tab>
   <mat-tab label="Discussion">
-    
+    <table class= "List">
+      <tr>
+        <th>Topic</th>
+        <th>Category</th>
+        <th>User</th>
+        <th>Replies</th>
+      </tr>
+      <tr>
+        <td><code>Disc 1</code></td>
+        <td>Bug</td>
+        <td>Admin</td>
+        <td>0</td>
+      </tr>
+    </table>
   </mat-tab>
 </mat-tab-group>
 
