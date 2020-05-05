@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularMaterial } from './angular.material';
 import { appRoutes } from './app.route';
@@ -14,7 +15,7 @@ import { FooterComponent } from './global/footer/footer.component';
 
 @NgModule({
   imports: [ 
-    BrowserModule, FormsModule, AngularMaterial,
+    BrowserModule, FormsModule, AngularMaterial,BrowserAnimationsModule,
     RouterModule.forRoot (appRoutes)
   ],
   declarations: [ 
