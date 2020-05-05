@@ -51,4 +51,7 @@ export class ProductSection {
     "status":"SUCCESS",
     "statusCode":200
   }
+  tabClick(tab) {
+  console.log(tab);
+  }
 }

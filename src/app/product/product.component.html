@@ -1,6 +1,26 @@
 <header-section></header-section>
 <section class="footer-fit">
 
+<mat-tab-group>
+  <mat-tab label="Plans">
+    <div class="pricing-form">
+      <form>
+        <div *ngFor="let val of productInfo.usagePlan">
+          
+          <select name="select-choice" id="select-choice">
+            <option *ngFor="let opt of val.usagePlan" value="{{ opt.planId }}">{{ opt.value }}</option>
+          </select>
+
+        </div>
+      </form>
+    </div>
+  </mat-tab>
+  <mat-tab label="Documentation"> Content 2 </mat-tab>
+  <mat-tab label="Sample Data"> Content 3 </mat-tab>
+  <mat-tab label="Discussion">
+    
+  </mat-tab>
+</mat-tab-group>
 
 </section>
 <footer-section></footer-section>

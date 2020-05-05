@@ -22,19 +22,20 @@ import { MatRippleModule } from '@angular/material/core';
 // Popup's & Modals
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule ({
     imports: [
         MatInputModule, MatFormFieldModule, MatCardModule, MatDatepickerModule, MatSlideToggleModule,
         MatCheckboxModule, MatExpansionModule, MatSidenavModule,
         MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatChipsModule, MatRippleModule,
-        MatDialogModule, MatTooltipModule
+        MatDialogModule, MatTooltipModule, MatTabsModule
     ],
     exports: [
         MatInputModule, MatFormFieldModule, MatCardModule, MatDatepickerModule, MatSlideToggleModule,
         MatCheckboxModule, MatExpansionModule, MatSidenavModule,
         MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatChipsModule, MatRippleModule,
-        MatDialogModule, MatTooltipModule
+        MatDialogModule, MatTooltipModule, MatTabsModule
     ]
 })
 export class AngularMaterial { }
