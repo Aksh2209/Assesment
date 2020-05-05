@@ -56,3 +56,10 @@ footer p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+/*Product CSS*/
+.tabs-wrapper {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 5px;
+}
