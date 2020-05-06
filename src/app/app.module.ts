@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterial } from './angular.material';
 import { appRoutes } from './app.route';
 
+import { PlansService } from './services/plans.service';
+
 import { AppComponent } from './app.component';
 import { LoginSection } from './login/login.component';
 import { ProductSection, AddTopic } from './product/product.component';
@@ -22,6 +24,8 @@ import { FooterComponent } from './global/footer/footer.component';
   declarations: [ 
     AppComponent, LoginSection, ProductSection, HeaderComponent, FooterComponent,  AddTopic
   ],
+   providers: [ PlansService ],
+
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
