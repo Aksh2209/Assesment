@@ -1,6 +1,12 @@
 import { Component,Inject } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { AddTopic } from './add.discussion.component';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component ({
   selector: 'product-section',
@@ -52,9 +58,7 @@ export class ProductSection {
     "status":"SUCCESS",
     "statusCode":200
   }
-  tabClick(tab) {
-  console.log(tab);
-  }
+
   constructor(public dialog: MatDialog) {}
   animal: string;
   name: string;
