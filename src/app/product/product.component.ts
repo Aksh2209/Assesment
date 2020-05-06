@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,Inject } from '@angular/core';
 import {FormControl} from '@angular/forms';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component ({
   selector: 'product-section',
@@ -54,4 +55,33 @@ export class ProductSection {
   tabClick(tab) {
   console.log(tab);
   }
+  constructor(public dialog: MatDialog) {}
+  animal: string;
+  name: string;
+  
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddTopic, {
+      width: '500px',
+      data: {name: this.name, animal: this.animal}
+    })
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 }
+  @Component({
+  selector: 'Add-Dicssion',
+  templateUrl: 'Add.discssion.html'
+})
+export class AddTopic {
+
+  constructor(
+    public dialogRef: MatDialogRef<AddTopic>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+    
+  }
+} 

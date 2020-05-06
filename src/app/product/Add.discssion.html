@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Add Topic</h1>
+  <form  class= "Addtopic">
+    <mat-form-field class="addtopic-field ,w-100">
+      <mat-label>Topic</mat-label>
+        <input matInput placeholder="Topic name(max chars 150)">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Description(max char 10000)"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+    <mat-label>Category</mat-label>
+      <select matNativeControl required [formControl]="selectFormControl">
+        <option label="--select--"></option>
+        <option value="Bug">Bug</option>
+        <option value="Question">Question</option>
+      </select>
+    </mat-form-field> 
+  </form>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">cancel</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Add</button>
+  </div>
