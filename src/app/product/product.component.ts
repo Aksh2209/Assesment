@@ -27,7 +27,7 @@ export class ProductSection implements OnInit {
   dataSource = ELEMENT_DATA;
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
  
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private plansService: PlansService) {}
   
   topic: string;
   category: string;
@@ -47,16 +47,14 @@ export class ProductSection implements OnInit {
     });
     this.table.renderRows(); 
   }
-   /*plans: Post[];
-
-  constructor(private plansService: PlansService) { }
+  plans: Post[];
 
   ngOnInit() {  
     this.plansService.getPlans().subscribe(plans => {
       this.plans = plans;
       console.log(plans);
     });
-  }*/
+  }
 }
 @Component({
   selector: 'add-discussion-section',
