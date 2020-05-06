@@ -14,9 +14,9 @@
     <p>This is a common discussion form. Please do not share any sensitive information.</p>
     <section class="discussion-form">
       
-      <div class="container text-center">
+      <div class="container">
         <button mat-raised-button color="primary" (click)="openDialog()" >Add Topic</button>
-        <table mat-table [dataSource]="dataSource" #mytable class="my-table mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" #mytable class="my-table">
           <ng-container matColumnDef="topic">
             <th mat-header-cell *matHeaderCellDef> Topic </th>
             <td mat-cell *matCellDef="let element"> {{element.topic}} </td>
