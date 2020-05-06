@@ -12,6 +12,7 @@ import { LoginSection } from './login/login.component';
 import { ProductSection } from './product/product.component';
 import { HeaderComponent } from './global/header/header.component';
 import { FooterComponent } from './global/footer/footer.component';
+import { AddTopic } from './product/add.discussion.component';
 
 @NgModule({
   imports: [ 
@@ -19,7 +20,7 @@ import { FooterComponent } from './global/footer/footer.component';
     RouterModule.forRoot (appRoutes)
   ],
   declarations: [ 
-    AppComponent, LoginSection, ProductSection, HeaderComponent, FooterComponent
+    AppComponent, LoginSection, ProductSection, HeaderComponent, FooterComponent, AddTopic
   ],
   bootstrap:    [ AppComponent ]
 })

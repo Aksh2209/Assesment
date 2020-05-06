@@ -70,18 +70,3 @@ export class ProductSection {
     });
   }
 }
-  @Component({
-  selector: 'Add-Dicssion',
-  templateUrl: 'Add.discssion.html'
-})
-export class AddTopic {
-
-  constructor(
-    public dialogRef: MatDialogRef<AddTopic>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-    
-  }
-} 
