@@ -28,6 +28,7 @@ export class ProductSection {
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
  
   constructor(public dialog: MatDialog) {}
+  
   topic: string;
   category: string;
   description: string;
@@ -39,6 +40,7 @@ export class ProductSection {
     dialogRef.afterClosed().subscribe((result: any) => this.addRowData(result.data));       
   }
   addRowData(row_obj){
+    
     this.dataSource.push({
       topic:row_obj.topic,
       category:row_obj.category,
