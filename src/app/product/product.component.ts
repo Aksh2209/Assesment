@@ -1,4 +1,4 @@
-import { Component, Inject , ViewChild, Optional  } from '@angular/core';
+import { Component, Inject , ViewChild } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {  MatTable } from '@angular/material/table';
@@ -39,8 +39,7 @@ export class ProductSection {
     })
     dialogRef.afterClosed().subscribe((result: any) => this.addRowData(result.data));       
   }
-  addRowData(row_obj){
-    
+  addRowData(row_obj){    
     this.dataSource.push({
       topic:row_obj.topic,
       category:row_obj.category,
@@ -59,19 +58,16 @@ export class AddTopic {
   dataSource:any;
  
   constructor(
-    public dialogRef: MatDialogRef<AddTopic>,
-    
-    @Inject(MAT_DIALOG_DATA) public data: UsersData) {
+    public dialogRef: MatDialogRef<AddTopic>,      
+  @Inject(MAT_DIALOG_DATA) public data: UsersData) {
     console.log(data);
     this.dataSource = {...data};
     this.action = this.dataSource.action;
   }
- 
   doAction(){
     this.dialogRef.close({event:this.action,data:this.dataSource});
   }
   onNoClick(): void {
     this.dialogRef.close();
-    
   }
 } 

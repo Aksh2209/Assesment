@@ -65,27 +65,16 @@ footer p {
 .tabs-wrapper {
   background-color: rgb(224, 224, 224);
 }
-.product-form {
-  display: grid;
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  padding: 20px;
-}
 .discussion-form {
   display: grid;
   padding: 20px;
 }
 .my-table {
   padding: 10px;
-  grid-auto-columns: auto;
-}
-.topic, .description, .category {
-  grid-column-gap: 10px;
 }
 
+
 /*Add Topic Form Css*/
-.h1 {
-  align-content: center;
-}
 .add-discussion{
   width: 400px;
   align-content: center;
