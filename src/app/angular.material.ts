@@ -25,18 +25,20 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule ({
     imports: [
         MatInputModule, MatFormFieldModule, MatCardModule, MatDatepickerModule, MatSlideToggleModule,
         MatCheckboxModule, MatExpansionModule, MatSidenavModule,
         MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatChipsModule, MatRippleModule,
-        MatDialogModule, MatTooltipModule, MatTabsModule, MatGridListModule
+        MatDialogModule, MatTooltipModule, MatTabsModule, MatGridListModule, MatTableModule
     ],
     exports: [
         MatInputModule, MatFormFieldModule, MatCardModule, MatDatepickerModule, MatSlideToggleModule,
         MatCheckboxModule, MatExpansionModule, MatSidenavModule,
         MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatChipsModule, MatRippleModule,
-        MatDialogModule, MatTooltipModule, MatTabsModule, MatGridListModule
+        MatDialogModule, MatTooltipModule, MatTabsModule, MatGridListModule,MatTableModule
     ]
 })
 export class AngularMaterial { }

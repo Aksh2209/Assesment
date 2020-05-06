@@ -1,12 +1,21 @@
-import { Component,Inject } from '@angular/core';
+import { Component, Inject , ViewChild, Optional  } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {  MatTable } from '@angular/material/table';
+import { HttpClient } from '@angular/common/http';
 
+import { PlansService } from '../services/plans.service';
 
-export interface DialogData {
-  animal: string;
-  name: string;
+export interface UsersData {
+  topic: string;
+  category: string;
+  description: string;
 }
+
+const ELEMENT_DATA: UsersData[] = [
+  {topic: 'Desc1', category: 'Bug', description: 'Admin'},
+  {topic: 'Desc2', category: 'Question', description: 'User'}
+];
 
 @Component ({
   selector: 'product-section',
@@ -59,19 +68,35 @@ export class ProductSection {
     "statusCode":200
   }
 
+  displayedColumns: string[] = ['topic', 'description', 'category'];
+  dataSource = ELEMENT_DATA;
+  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
+ 
   constructor(public dialog: MatDialog) {}
-  animal: string;
-  name: string;
-  
+  topic: string;
+  category: string;
+  description: string;
+ 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTopic, {
       
-      data: {name: this.name, animal: this.animal}
+      data: {topic: this.topic, description: this.description, category: this.category}
     })
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      if(result.event == 'Add'){
+      this.addRowData(result.data)
+      }
     });
+   
+  }
+ 
+  addRowData(row_obj){
+    this.dataSource.push({
+      topic:row_obj.topic,
+      category:row_obj.category,
+      description:row_obj.description
+    });
+    this.table.renderRows(); 
   }
 }
   @Component({
@@ -81,10 +106,21 @@ export class ProductSection {
 })
 export class AddTopic {
 
+  action:string;
+  dataSource:any;
+ 
   constructor(
     public dialogRef: MatDialogRef<AddTopic>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
+    
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: UsersData) {
+    console.log(data);
+    this.dataSource = {...data};
+    this.action = this.dataSource.action;
+  }
+ 
+  doAction(){
+    this.dialogRef.close({event:this.action,data:this.dataSource});
+  }
   onNoClick(): void {
     this.dialogRef.close();
     
