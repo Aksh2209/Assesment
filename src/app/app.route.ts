@@ -5,6 +5,6 @@ import{ ProductSection } from './product/product.component';
 
 export const appRoutes: Routes = [
   { path: 'login', component: LoginSection },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'product', pathMatch: 'full' },
   {path:'product' , component:ProductSection }
 ]

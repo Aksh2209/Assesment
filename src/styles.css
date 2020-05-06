@@ -77,8 +77,13 @@ footer p {
 /*Add Topic Form Css*/
 .add-discussion{
   width: 400px;
-  align-content: center;
 }
-.w-100 {
+.mat-dialog-title {
+  text-align: center;
+}
+.mat-form-field {
   width: 100%;
+}
+.mat-dialog-actions {
+  justify-content: center;
 }

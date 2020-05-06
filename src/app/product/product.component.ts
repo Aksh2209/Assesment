@@ -47,6 +47,12 @@ export class ProductSection {
     });
     this.table.renderRows(); 
   }
+  plans$;
+  constructor( private plansService: PlansService ) {}
+
+  fetchPlans(){
+    this.plans$ = this.plansService.fetchPlans();
+  }
 }
 @Component({
   selector: 'add-discussion-section',
@@ -56,12 +62,12 @@ export class AddTopic {
 
   action:string;
   dataSource:any;
- 
+
   constructor(
     public dialogRef: MatDialogRef<AddTopic>,      
-  @Inject(MAT_DIALOG_DATA) public data: UsersData) {
-    console.log(data);
-    this.dataSource = {...data};
+  @Inject(MAT_DIALOG_DATA) public dataSourse: UsersData) {
+    console.log(dataSourse);
+    this.dataSource = {...dataSourse};
     this.action = this.dataSource.action;
   }
   doAction(){
