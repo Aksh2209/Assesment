@@ -9,13 +9,14 @@ export interface Post {
   subscriptionStatus:string,
   subscriptionDuration:string
 }
-
 @Injectable()
 export class PlansService {
+  plansUrl: string = 'https://5eafc3b20605ed0016d2cd5b.mockapi.io/angular/demo/packdetails';
 
   constructor(private http: HttpClient) { }
-  
-  fetchPlans(): Observable<Object> {
-    return this.http.get('https://5eafc3b20605ed0016d2cd5b.mockapi.io/angular/demo/packdetails');
+
+  getPlans() : Observable<Post[]> {
+    return this.http.get<Post[]>(this.plansUrl);
   }
+
 }

@@ -1,4 +1,4 @@
-import { Component, Inject , ViewChild } from '@angular/core';
+import { Component, Inject , ViewChild , OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {  MatTable } from '@angular/material/table';
@@ -21,7 +21,7 @@ const ELEMENT_DATA: UsersData[] = [
   selector: 'product-section',
   templateUrl: 'product.component.html'
 })
-export class ProductSection { 
+export class ProductSection implements OnInit { 
   
   displayedColumns: string[] = ['topic', 'description', 'category'];
   dataSource = ELEMENT_DATA;
@@ -47,12 +47,16 @@ export class ProductSection {
     });
     this.table.renderRows(); 
   }
-  plans$;
-  constructor( private plansService: PlansService ) {}
+   /*plans: Post[];
 
-  fetchPlans(){
-    this.plans$ = this.plansService.fetchPlans();
-  }
+  constructor(private plansService: PlansService) { }
+
+  ngOnInit() {  
+    this.plansService.getPlans().subscribe(plans => {
+      this.plans = plans;
+      console.log(plans);
+    });
+  }*/
 }
 @Component({
   selector: 'add-discussion-section',
