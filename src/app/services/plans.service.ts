@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Subject } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 export interface Post {
   planId: string,
@@ -11,9 +11,12 @@ export interface Post {
   subscriptionDuration:string
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PlansService {
   PLANS_DETAILS: any;
+  plansURL: string = 'https://5eafc3b20605ed0016d2cd5b.mockapi.io/angular/demo/packdetails';
 
   constructor(private http: HttpClient) { }
 
@@ -28,5 +31,4 @@ export class PlansService {
 
     return this.PLANS_DETAILS;
   }
-
 }

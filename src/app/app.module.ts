@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AngularMaterial } from './angular.material';
 import { appRoutes } from './app.route';
@@ -17,7 +18,7 @@ import { FooterComponent } from './global/footer/footer.component';
 
 @NgModule({
   imports: [ 
-    BrowserModule, FormsModule,ReactiveFormsModule, AngularMaterial,BrowserAnimationsModule, 
+    BrowserModule, FormsModule,ReactiveFormsModule, AngularMaterial,BrowserAnimationsModule, HttpClientModule,
     RouterModule.forRoot (appRoutes)
   ],
   entryComponents: [ AddTopic ],

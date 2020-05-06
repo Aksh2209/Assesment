@@ -22,52 +22,7 @@ const ELEMENT_DATA: UsersData[] = [
   templateUrl: 'product.component.html'
 })
 export class ProductSection { 
-  productInfo = {
-    "message":"APIPACK_FETCHED",
-    "result":[
-      {
-        "description":"PROD",
-        "packId":"1",
-        "packName":"SOAP",
-        "docFileName":"doc.html",
-        "dataFileName":"data.html",
-        "usagePlan":[
-          {
-            "planId":"1",
-            "planName":"Gold",
-            "subscribed":true,
-            "subscriptionStatus":"active",
-            "subscriptionDuration":"6Months"
-          },
-          {
-            "planId":"2",
-            "planName":"Platinum",
-            "subscribed":false,
-            "subscriptionStatus":null,
-            "subscriptionDuration":"1Year"
-          },
-          {
-            "planId":"3",
-            "planName":"Silver",
-            "subscribed":true,
-            "subscriptionStatus":"active",
-            "subscriptionDuration":"3Months"
-          },
-          {
-            "planId":"4",
-            "planName":"Free",
-            "subscribed":false,
-            "subscriptionStatus":null,
-            "subscriptionDuration":"1Month"
-          }
-        ]
-      }
-    ],
-    "resultString":"",
-    "status":"SUCCESS",
-    "statusCode":200
-  }
-
+  
   displayedColumns: string[] = ['topic', 'description', 'category'];
   dataSource = ELEMENT_DATA;
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
@@ -79,17 +34,10 @@ export class ProductSection {
  
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTopic, {
-      
       data: {topic: this.topic, description: this.description, category: this.category}
     })
-    dialogRef.afterClosed().subscribe(result => {
-      if(result.event == 'Add'){
-      this.addRowData(result.data)
-      }
-    });
-   
+    dialogRef.afterClosed().subscribe((result: any) => this.addRowData(result.data));       
   }
- 
   addRowData(row_obj){
     this.dataSource.push({
       topic:row_obj.topic,
@@ -99,10 +47,9 @@ export class ProductSection {
     this.table.renderRows(); 
   }
 }
-  @Component({
+@Component({
   selector: 'add-discussion-section',
   templateUrl: 'add.discussion.html',
-  
 })
 export class AddTopic {
 
@@ -112,7 +59,7 @@ export class AddTopic {
   constructor(
     public dialogRef: MatDialogRef<AddTopic>,
     
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: UsersData) {
+    @Inject(MAT_DIALOG_DATA) public data: UsersData) {
     console.log(data);
     this.dataSource = {...data};
     this.action = this.dataSource.action;
