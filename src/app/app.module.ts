@@ -12,8 +12,6 @@ import { LoginSection } from './login/login.component';
 import { ProductSection, AddTopic } from './product/product.component';
 import { HeaderComponent } from './global/header/header.component';
 import { FooterComponent } from './global/footer/footer.component';
-//import { AddTopic } from './product/product.component';
-
 
 @NgModule({
   imports: [ 

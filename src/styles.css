@@ -56,13 +56,35 @@ footer p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/*Product CSS*/
+/*Product CSS
 .tabs-wrapper {
-
-}
-.List {
   display: grid;
-  
   padding: 20px;
   border-radius: 5px;
 }
+.product-form {
+  display: grid;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+Add Topic Form Css
+.Addtopic{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+select {
+  display: block;
+  padding: .5rem;
+  width: 100%;
+  background-color: white;
+  border-radius: .25rem;
+  border: 1px solid #e5e5e5;
+  outline: none;
+      
+}*/
