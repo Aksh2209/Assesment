@@ -60,16 +60,12 @@ footer p {
 }
 /*Product CSS*/
 .tabs-wrapper {
-
+  background-color: rgb(224, 224, 224);
 }
 .product-form {
   display: grid;
   border: 1px solid rgba(0, 0, 0, 0.4);
   padding: 20px;
-}
-label {
-  display: inline-block;
-  margin-bottom: .5rem;
 }
 
 /*Add Topic Form Css*/
