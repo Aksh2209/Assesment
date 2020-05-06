@@ -9,19 +9,20 @@ import { appRoutes } from './app.route';
 
 import { AppComponent } from './app.component';
 import { LoginSection } from './login/login.component';
-import { ProductSection } from './product/product.component';
+import { ProductSection, AddTopic } from './product/product.component';
 import { HeaderComponent } from './global/header/header.component';
 import { FooterComponent } from './global/footer/footer.component';
+//import { AddTopic } from './product/product.component';
 
 
 @NgModule({
   imports: [ 
-    BrowserModule, FormsModule,ReactiveFormsModule, AngularMaterial,BrowserAnimationsModule,
+    BrowserModule, FormsModule,ReactiveFormsModule, AngularMaterial,BrowserAnimationsModule, 
     RouterModule.forRoot (appRoutes)
   ],
-  //entryComponents: [ AddTopic ],
+  entryComponents: [ AddTopic ],
   declarations: [ 
-    AppComponent, LoginSection, ProductSection, HeaderComponent, FooterComponent
+    AppComponent, LoginSection, ProductSection, HeaderComponent, FooterComponent,  AddTopic
   ],
   bootstrap:    [ AppComponent ]
 })

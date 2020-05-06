@@ -75,7 +75,7 @@ export class ProductSection {
   }
 }
   @Component({
-  selector: 'AddTopic-selector',
+  selector: 'add-discussion',
   templateUrl: 'add.discussion.html',
   
 })
