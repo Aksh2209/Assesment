@@ -1,18 +1,19 @@
 <h1 mat-dialog-title>Add Topic</h1>
-  <form  class= "addtopic">
-    <mat-form-field class="addtopic-field ,w-100">
+  <form  class= "add-discussion">
+    <mat-form-field class="addtopic, w-100">
       <mat-label>Topic</mat-label>
-        <input matInput placeholder="Topic name(max chars 150)">
+        <input matInput placeholder="Topic name">
     </mat-form-field>
     <br>
     <mat-form-field >
       <mat-label>Description</mat-label>
-        <textarea matInput placeholder="Description(max char 10000)"></textarea>
+        <textarea matInput placeholder="Description"></textarea>
     </mat-form-field>
+    <br>
     <mat-form-field>
     <mat-label>Category</mat-label>
       <select matNativeControl required [formControl]="selectFormControl">
-        <option label="--select--"></option>
+        <option label="select"></option>
         <option value="Bug">Bug</option>
         <option value="Question">Question</option>
       </select>

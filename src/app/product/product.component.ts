@@ -65,7 +65,7 @@ export class ProductSection {
   
   openDialog(): void {
     const dialogRef = this.dialog.open(AddTopic, {
-      width: '500px',
+      
       data: {name: this.name, animal: this.animal}
     })
     dialogRef.afterClosed().subscribe(result => {
@@ -75,7 +75,7 @@ export class ProductSection {
   }
 }
   @Component({
-  selector: 'add-discussion',
+  selector: 'add-discussion-section',
   templateUrl: 'add.discussion.html',
   
 })
