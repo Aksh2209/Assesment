@@ -4,7 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import {  MatTable } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 
-import { PlansService } from '../services/plans.service';
+import { PlansService, Post } from '../services/plans.service';
 
 export interface UsersData {
   topic: string;
