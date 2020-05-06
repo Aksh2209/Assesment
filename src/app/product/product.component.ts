@@ -1,7 +1,7 @@
 import { Component,Inject } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { AddTopic } from './add.discussion.component';
+
 
 export interface DialogData {
   animal: string;
@@ -74,3 +74,19 @@ export class ProductSection {
     });
   }
 }
+  @Component({
+  selector: 'AddTopic-selector',
+  templateUrl: 'add.discussion.html',
+  
+})
+export class AddTopic {
+
+  constructor(
+    public dialogRef: MatDialogRef<AddTopic>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+    
+  }
+} 
