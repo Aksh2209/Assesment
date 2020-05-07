@@ -41,9 +41,9 @@ export class ProductSection implements OnInit {
   }
   addRowData(row_obj){    
     this.dataSource.push({
-      topic:row_obj.topic,
-      category:row_obj.category,
-      description:row_obj.description
+      topic: row_obj.topic,
+      category: row_obj.category,
+      description: row_obj.description
     });
     this.table.renderRows(); 
   }
@@ -66,7 +66,7 @@ export class AddTopic {
   dataSource:any;
 
   constructor(
-    public dialogRef: MatDialogRef<AddTopic>,      
+    public dialogRef: MatDialogRef<AddTopic>,     
   @Inject(MAT_DIALOG_DATA) public dataSourse: UsersData) {
     console.log(dataSourse);
     this.dataSource = {...dataSourse};
@@ -75,7 +75,7 @@ export class AddTopic {
   doAction(){
     this.dialogRef.close({event:this.action,data:this.dataSource});
   }
-  onNoClick(): void {
-    this.dialogRef.close();
+  closeDialog(){
+    this.dialogRef.close({event:'Cancel'});
   }
 } 
