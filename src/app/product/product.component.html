@@ -2,16 +2,24 @@
 <section class="footer-fit">
 <mat-tab-group class= "tabs-wrapper" dynamicHeight >
   <mat-tab label="Plans">
-    <p>posts</p>
-        <ul>
-          <li class="card-body" *ngFor ="let plan of plans|json" >
-            {{ plans.planId }} 
-            {{ Plans.planName }}
-            {{ post.subscribed }}
-            {{ post.subscriptionDuration }}
-            {{post.subscriptionStatus}}
-          </li>
-        </ul>
+    <p>plans</p>
+      <ng-container  *ngFor ="let post of posts|keyvalue" >
+        <ng-container *ngIf="post.key == 'result'" [(ngModel)]="post.value" ngDefaultControl>  
+          <ng-container  *ngFor ="let item of post.value|keyvalue" >
+            <ng-container  *ngFor ="let items of item.value|keyvalue" >
+              <ng-container *ngIf="items.key == 'usagePlan'" [(ngModel)]="items.value" ngDefaultControl> 
+                <ng-container  *ngFor ="let data of items.value|keyvalue" >
+                  <div class="plans">
+                    <p >{{data.value.planName}}</p>
+                    <p>{{data.value.subscriptionDuration}} </p>
+                    <p>{{data.value.subscriptionStatus}}</p>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </ng-container>
   </mat-tab>
   <mat-tab label="Documentation">
     <p>No documentation is available yet.</p>
@@ -22,7 +30,6 @@
   <mat-tab label="Discussion">
     <p>This is a common discussion form. Please do not share any sensitive information.</p>
     <section class="discussion-form">
-      
       <div class="container">
         <button mat-raised-button color="primary" (click)="openDialog()" >Add Topic</button>
         <table mat-table [dataSource]="dataSource" #mytable class="my-table">
@@ -42,7 +49,6 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
       </div>
-
     </section>
   </mat-tab>
 </mat-tab-group>

@@ -47,12 +47,12 @@ export class ProductSection implements OnInit {
     });
     this.table.renderRows(); 
   }
-  plans: Post[];
+  posts: Post[];
 
   ngOnInit() {  
-    this.plansService.getPlans().subscribe(plans => {
-      this.plans = plans;
-      console.log(plans);
+     this.plansService.getPosts().subscribe(posts => {
+      this.posts = posts;
+      console.log(posts);
     });
   }
 }

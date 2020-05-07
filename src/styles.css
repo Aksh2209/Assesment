@@ -69,6 +69,15 @@ footer p {
 .my-table {
   padding: 10px;
 }
+.plans {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  border: 1px solid rgb(105, 102, 102);
+}
 
 
 /*Add Topic Form Css*/

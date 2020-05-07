@@ -11,12 +11,11 @@ export interface Post {
 }
 @Injectable()
 export class PlansService {
-  plansUrl: string = 'https://5eafc3b20605ed0016d2cd5b.mockapi.io/angular/demo/packdetails';
+  postsUrl: string = 'https://5eafc3b20605ed0016d2cd5b.mockapi.io/angular/demo/packdetails';
 
   constructor(private http: HttpClient) { }
 
-  getPlans() : Observable<Post[]> {
-    return this.http.get<Post[]>(this.plansUrl);
+  getPosts() : Observable<Post[]> {
+    return this.http.get<Post[]>(this.postsUrl);
   }
-
 }
